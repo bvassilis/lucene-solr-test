@@ -37,8 +37,10 @@ public class TestDemo extends LuceneTestCase {
       fakeSystemOut.flush();
       String output = bytes.toString(Charset.defaultCharset().name()); // intentionally use default encoding
       assertTrue("output=" + output, output.contains(expectedHitCount + " total matching documents"));
-    } finally {
       System.setOut(outSave);
+      System.out.println(output);
+    } finally {
+        System.setOut(outSave);
     }
   }
 
